@@ -46,6 +46,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@neevaco/xyzapi@neevaco/xyz":
+  version "0.0.0"
+  resolved "https://codeload.github.com/neevaco/xyz/tar.gz/0f85320420bc588f8611568f6c6103ceb7b94093"
+
 "@next/env@12.1.4":
   version "12.1.4"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-12.1.4.tgz#5af629b43075281ecd7f87938802b7cf5b67e94b"
@@ -143,6 +147,18 @@
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.0.8.tgz#be3e914e84eacf16dbebd311c0d0b44aa1174c64"
   integrity sha512-ZK5v4bJwgXldAUA8r3q9YKfCwOqoHTK/ZqRjSeRXQrBXWouoPnS4MQtgC4AXGiiBuUu5wxrRgTlv0ktmM4P1Aw==
+
+"@stytch/stytch-js@^3.3.0":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@stytch/stytch-js/-/stytch-js-3.3.1.tgz#9b97a60f220eea2058ef5f9c0359f45a46c122ac"
+  integrity sha512-VQNeALsXxV9pMy6rqmir6Fzlr6Kpgaue5vTGOf83idR+tw6MnQx+QAFWmJevK4ODrVzJGf9T7lrBh0vTLZGvWQ==
+
+"@stytch/stytch-react@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@stytch/stytch-react/-/stytch-react-4.1.1.tgz#2276934caa136bd64f6d53b3a88ffc3f0b44aefc"
+  integrity sha512-nWIwWrPoDm/qgX40gC9op0oJWS0hHxlFg14wZ9T5Mb5LPg/L0dYVQCTQaX20P0Yv2ms7qH4Mpbj6chQ0K9DDtA==
+  dependencies:
+    "@stytch/stytch-js" "^3.3.0"
 
 "@types/json5@^0.0.29":
   version "0.0.29"
