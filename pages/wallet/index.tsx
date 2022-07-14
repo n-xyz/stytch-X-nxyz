@@ -21,9 +21,11 @@ const Home: NextPage = () => {
     for (const wallet of user?.crypto_wallets ?? []) {
       if (wallet.crypto_wallet_type === "ethereum") {
         setWalletAddress(wallet.crypto_wallet_address);
-      } else {
-        console.log(wallet.crypto_wallet_type);
       }
+    }
+
+    if (walletAddress === "") {
+      setWrongWalletType(true);
     }
   });
 
@@ -36,7 +38,7 @@ const Home: NextPage = () => {
         <header className={styles.header}>
           <div className={styles.githubLink}>
             <Link href={"https://github.com/neevaco/stytch-X-nxyz"}>
-              github
+              Github
             </Link>
           </div>
           <button className={styles.signOut} onClick={signOut}>
