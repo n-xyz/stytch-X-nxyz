@@ -1,29 +1,26 @@
 import type { NextPage } from "next";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 import Login from "../components/login/StytchWalletLogin";
-import Wallet from "../components/getWallet/nxyzWallet";
 import styles from "../styles/Home.module.css";
-import { useStytchUser, useStytchLazy } from "@stytch/stytch-react";
+import { useStytchUser } from "@stytch/stytch-react";
 
 const Home: NextPage = () => {
-  const stytchClient = useStytchLazy();
-  const WalletAddress =
-    useStytchUser()?.crypto_wallets[0].crypto_wallet_address;
+  const sdkUser = useStytchUser();
+
+  const router = useRouter();
 
   useEffect(() => {
-    window.addEventListener("beforeunload", (ev) => {
-      ev.preventDefault();
-      stytchClient.session.revoke();
-    });
-  }, [stytchClient]);
+    if (sdkUser) {
+      router.push("/wallet");
+    }
+  });
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to nxyz
-          {WalletAddress ? `,\n${WalletAddress}` : ""}
-        </h1>
-        {WalletAddress ? "cookies" : <Login />}
+        <h1 className={styles.title}>Welcome to nxyz</h1>
+        <Login />
       </main>
     </div>
   );

@@ -9,9 +9,11 @@
   "dependencies": {
     "@neevaco/xyzapi": "neevaco/xyz",
     "@stytch/stytch-react": "^4.1.1",
+    "isomorphic-fetch": "^3.0.0",
     "next": "12.1.4",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "rooks": "^5.11.8"
   },
   "devDependencies": {
     "@types/node": "^18.0.3",
