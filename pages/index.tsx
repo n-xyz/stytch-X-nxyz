@@ -29,8 +29,8 @@ const Home: NextPage = () => {
         </header>
         <h1 className={styles.title}>Wallet Viewer</h1>
         <p className={styles.description}>
-          This is a simple wallet viewer that allows you to view your wallet
-          data on the blockchain and within miliseconds.
+          A simple app that allows you to view your wallet data on the
+          blockchain and within miliseconds.
         </p>
         <Login />
       </main>
