@@ -12,6 +12,21 @@
   align-items: center;
 }
 
+.githubLink{
+  position: absolute;
+  top: 0;
+  right: 30px;
+  text-decoration: none;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
 .footer {
   display: flex;
   flex: 1;
