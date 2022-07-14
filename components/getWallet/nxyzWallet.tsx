@@ -27,7 +27,10 @@ export default function WalletView({ walletAddress }: walletProps) {
   return (
     <div>
       {liveWallet ? (
-        <h1 className={styles.title}>Wallet data</h1>
+        <div>
+          <h1 className={styles.title}>nxyz wallet data</h1>
+          <p className={styles.description}>{liveWallet.address}</p>
+        </div>
       ) : (
         <p className={styles.description}>Loading...</p>
       )}

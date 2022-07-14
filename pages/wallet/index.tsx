@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
-import Wallet from "../../components/getWallet/nxyzWallet";
 import styles from "../../styles/Home.module.css";
 import { useRouter } from "next/router";
 import { useStytchUser, useStytchLazy } from "@stytch/stytch-react";
@@ -34,12 +33,16 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <button className={styles.signOut} onClick={signOut}>
-          Sign Out
-        </button>
-        <div className={styles.githubLink}>
-          <Link href={"https://github.com/neevaco/stytch-X-nxyz"}>github</Link>
-        </div>
+        <header className={styles.header}>
+          <div className={styles.githubLink}>
+            <Link href={"https://github.com/neevaco/stytch-X-nxyz"}>
+              github
+            </Link>
+          </div>
+          <button className={styles.signOut} onClick={signOut}>
+            Sign Out
+          </button>
+        </header>
         {wrongWalletType ? (
           <p className={styles.description}>
             Please sign out and use an ethereum wallet

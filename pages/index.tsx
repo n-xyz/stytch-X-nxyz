@@ -20,14 +20,18 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
+        <header className={styles.header}>
+          <div className={styles.githubLink}>
+            <Link href={"https://github.com/neevaco/stytch-X-nxyz"}>
+              github
+            </Link>
+          </div>
+        </header>
         <h1 className={styles.title}>Wallet Viewer</h1>
         <p className={styles.description}>
           This is a simple wallet viewer that allows you to view your wallet
           data on the blockchain and within miliseconds.
         </p>
-        <div className={styles.githubLink}>
-          <Link href={"https://github.com/neevaco/stytch-X-nxyz"}>github</Link>
-        </div>
         <Login />
       </main>
     </div>
