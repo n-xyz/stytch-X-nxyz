@@ -3,9 +3,7 @@ import type { AppProps } from "next/app";
 import { StytchProvider, initStytch } from "@stytch/stytch-react";
 import Script from "next/script";
 
-const stytch = initStytch(
-  "public-token-test-a5dd8aa8-8f9c-47cd-8f81-3ab1e0fdcb43"
-);
+const stytch = initStytch(process.env.NEXT_PUBLIC_STYTCH_PUBLIC_TOKEN || "");
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

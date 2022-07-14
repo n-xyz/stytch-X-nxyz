@@ -12,12 +12,20 @@ const Home: NextPage = () => {
   const user = useStytchUser();
   const stytch = useStytchLazy();
   const [walletAddress, setWalletAddress] = useState("");
+  const [wrongWalletType, setWrongWalletType] = useState(false);
 
   useEffect(() => {
     if (typeof window !== null && !user) {
       router.replace("/");
     }
-    setWalletAddress(user?.crypto_wallets[0].crypto_wallet_address);
+
+    for (const wallet of user?.crypto_wallets ?? []) {
+      if (wallet.crypto_wallet_type === "ethereum") {
+        setWalletAddress(wallet.crypto_wallet_address);
+      } else {
+        console.log(wallet.crypto_wallet_type);
+      }
+    }
   });
 
   const signOut = async () => {
@@ -26,12 +34,19 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>{walletAddress}</h1>
+        <button className={styles.signOut} onClick={signOut}>
+          Sign Out
+        </button>
         <div className={styles.githubLink}>
           <Link href={"https://github.com/neevaco/stytch-X-nxyz"}>github</Link>
         </div>
-        <button onClick={signOut}>Sign Out</button>
-        <WalletView walletAddress={walletAddress} />
+        {wrongWalletType ? (
+          <p className={styles.description}>
+            Please sign out and use an ethereum wallet
+          </p>
+        ) : (
+          <WalletView walletAddress={walletAddress} />
+        )}
       </main>
     </div>
   );
