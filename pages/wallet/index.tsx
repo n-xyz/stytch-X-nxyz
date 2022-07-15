@@ -17,14 +17,15 @@ const Home: NextPage = () => {
     if (typeof window !== null && !user) {
       router.replace("/");
     }
-
+    let gotWalletAddress = false;
     for (const wallet of user?.crypto_wallets ?? []) {
       if (wallet.crypto_wallet_type === "ethereum") {
         setWalletAddress(wallet.crypto_wallet_address);
+        gotWalletAddress = true;
       }
     }
 
-    if (walletAddress === "") {
+    if (!gotWalletAddress) {
       setWrongWalletType(true);
     }
   });
