@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Login from "../components/login/StytchWalletLogin";
 import styles from "../styles/Home.module.css";
 import { useStytchUser } from "@stytch/stytch-react";
-import Link from "next/link";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   const sdkUser = useStytchUser();
@@ -19,12 +19,19 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Stytch X nxyz</title>
+      </Head>
       <main className={styles.main}>
         <header className={styles.header}>
           <div className={styles.githubLink}>
-            <Link href={"https://github.com/neevaco/stytch-X-nxyz"}>
+            <a
+              href={"https://github.com/neevaco/stytch-X-nxyz"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Github
-            </Link>
+            </a>
           </div>
         </header>
         <h1 className={styles.title}>Wallet Viewer</h1>
