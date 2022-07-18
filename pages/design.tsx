@@ -7,6 +7,7 @@ import {
   Wallet,
   CurrencyInfo,
   TokenAttribute,
+  ENS,
 } from "@neevaco/xyzapi/lib/typescript"
 import cx from "classnames"
 import { DateTime } from "luxon"
@@ -15,6 +16,21 @@ import Image from "next/image"
 import styles from "./index.module.css"
 
 const wallet = {
+  ens: [
+    {
+      name: "ramaswamy.eth",
+      pointsTo: "0x5C62EcCd649076673DA39AD8E5b92dd263D5A1df",
+      isPrimary: true,
+    },
+    {
+      name: "neevaco.eth",
+      pointsTo: "0x5C62EcCd649076673DA39AD8E5b92dd263D5A1df",
+    },
+    {
+      name: "nxyz.eth",
+      pointsTo: "0x5C62EcCd649076673DA39AD8E5b92dd263D5A1df",
+    },
+  ] as ENS[],
   balances: [
     {
       value: "285750317161542050",
