@@ -19,7 +19,8 @@
   align-items: center;
 }
 
-.githubLink, .signOut{
+.githubLink,
+.signOut {
   text-decoration: none;
   border: 1px solid #000;
   border-radius: 5px;
@@ -30,7 +31,6 @@
   font-weight: bold;
   margin: 1rem 0;
 }
-
 
 .title {
   line-height: 1.15;
@@ -50,13 +50,13 @@
 }
 
 .code {
-  background: #2D303A;
+  background: #2d303a;
   border-radius: 5px;
-  color: #04FF2E;
+  color: #04ff2e;
   padding: 8px;
   font-size: 16px;
   font-family: IBM Plex Mono, monospace;
   margin-bottom: 16px;
   white-space: pre-wrap;
-  height:fit-content;
+  height: fit-content;
 }

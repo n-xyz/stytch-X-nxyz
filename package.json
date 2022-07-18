@@ -4,7 +4,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "lint": "eslint --fix"
   },
   "dependencies": {
     "@neevaco/xyzapi": "neevaco/xyz",
@@ -17,8 +19,18 @@
   "devDependencies": {
     "@types/node": "^18.0.3",
     "@types/react": "18.0.1",
-    "eslint": "8.12.0",
-    "eslint-config-next": "12.1.4",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "autoprefixer": "^10.4.2",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-next": "^12.1.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-testing-library": "^5.1.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "prettier": "2.7.1",
     "typescript": "^4.7.4"
   }
 }

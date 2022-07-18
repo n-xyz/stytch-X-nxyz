@@ -1,21 +1,23 @@
-import type { NextPage } from "next";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import Login from "../components/login/StytchWalletLogin";
-import styles from "../styles/Home.module.css";
-import { useStytchUser } from "@stytch/stytch-react";
-import Head from "next/head";
+import React, { useEffect } from "react"
 
-const Home: NextPage = () => {
-  const sdkUser = useStytchUser();
+import { useStytchUser } from "@stytch/stytch-react"
+import Head from "next/head"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
-  const router = useRouter();
+import Login from "../components/login/StytchWalletLogin"
+import styles from "../styles/Home.module.css"
+
+export default function Home() {
+  const sdkUser = useStytchUser()
+
+  const router = useRouter()
 
   useEffect(() => {
     if (sdkUser) {
-      router.push("/wallet");
+      router.push("/wallet")
     }
-  });
+  })
 
   return (
     <div className={styles.container}>
@@ -25,13 +27,11 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <header className={styles.header}>
           <div className={styles.githubLink}>
-            <a
-              href={"https://github.com/neevaco/stytch-X-nxyz"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Github
-            </a>
+            <Link href="https://github.com/neevaco/stytch-X-nxyz">
+              <a target="_blank" rel="noopener noreferrer">
+                Github
+              </a>
+            </Link>
           </div>
         </header>
         <h1 className={styles.title}>Wallet Viewer</h1>
@@ -41,7 +41,5 @@ const Home: NextPage = () => {
         <Login />
       </main>
     </div>
-  );
-};
-
-export default Home;
+  )
+}

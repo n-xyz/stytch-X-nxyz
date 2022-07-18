@@ -1,20 +1,22 @@
-import React, { useEffect } from "react";
-import { Wallet } from "@neevaco/xyzapi/lib/typescript";
-import styles from "../../styles/Home.module.css";
-import request from "../../lib/request";
+import React, { useEffect } from "react"
+
+import { Wallet } from "@neevaco/xyzapi/lib/typescript"
+
+import request from "../../lib/request"
+import styles from "../../styles/Home.module.css"
 
 interface walletProps {
-  walletAddress: string;
+  walletAddress: string
 }
 
 export default function WalletView({ walletAddress }: walletProps) {
-  const [liveWallet, setLiveWallet] = React.useState<Wallet | undefined>();
+  const [liveWallet, setLiveWallet] = React.useState<Wallet | undefined>()
 
   useEffect(() => {
     request(walletAddress, "Ethereum").then((res) => {
-      setLiveWallet(res.props.wallet);
-    });
-  }, [walletAddress]);
+      setLiveWallet(res.props.wallet)
+    })
+  }, [walletAddress])
 
   return (
     <div>
@@ -30,5 +32,5 @@ export default function WalletView({ walletAddress }: walletProps) {
         {JSON.stringify(liveWallet, null, 2)?.replace(" ", "")}
       </p>
     </div>
-  );
+  )
 }

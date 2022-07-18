@@ -1,12 +1,12 @@
-import { Wallet } from "@neevaco/xyzapi/lib/typescript";
+import { Wallet } from "@neevaco/xyzapi/lib/typescript"
 
 interface Props {
-  wallet?: Wallet;
+  wallet?: Wallet
 }
 
 interface ServerSideProps {
-  props: Props;
-  notFound: boolean;
+  props: Props
+  notFound: boolean
 }
 
 export default function request(
@@ -20,7 +20,7 @@ export default function request(
         return Promise.resolve({
           notFound: true,
           props: {},
-        });
+        })
       }
 
       return Promise.resolve({
@@ -28,21 +28,21 @@ export default function request(
         props: {
           wallet: res[0],
         },
-      });
+      })
     })
     .catch((err) => {
       if (err && err.status === 404) {
         return {
           notFound: true,
           props: {},
-        };
+        }
       }
 
-      console.error("Unable to fetch wallet", err);
+      console.error("Unable to fetch wallet", err)
 
       return {
         notFound: false,
         props: {},
-      };
-    });
+      }
+    })
 }
