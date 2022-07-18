@@ -8,7 +8,7 @@ import { useRouter } from "next/router"
 import WalletView from "../../components/getWallet/nxyzWallet"
 import styles from "../../styles/Home.module.css"
 
-export default function Home() {
+export default function Wallet() {
   const router = useRouter()
   const user = useStytchUser()
   const stytch = useStytchLazy()

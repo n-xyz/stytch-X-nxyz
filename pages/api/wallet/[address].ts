@@ -5,6 +5,10 @@ const basePath = process.env.NXYZ_API_HOST
 const apiKey = process.env.NXYZ_API_KEY
 const api = DefaultApiFactory({ basePath }, undefined, basePath)
 
+/**
+ * handler is the handler for api request to {this sites domain}/api/wallet/{wallet address}?blockchain="ethereum"
+ * it returns the response for the given wallet address and blockchain from the nxyz api
+ */
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { address: walletAddress, blockchain = "ethereum" } = req.query
 

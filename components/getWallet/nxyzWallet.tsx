@@ -8,32 +8,11 @@ import Image from "next/image"
 import request from "../../lib/request"
 import styles from "../../styles/Home.module.css"
 
-interface walletProps {
-  walletAddress: string
-}
-
-interface SectionTitleProps {
-  children: React.ReactNode
-}
-
-function SectionTitle(props: SectionTitleProps) {
-  const { children } = props
-  return <h1 className="text-2xl font-normal mb-4 text-gray-600">{children}</h1>
-}
-
-interface SectionProps {
-  children: React.ReactNode
-}
-
-function Section(props: SectionProps) {
-  const { children } = props
-  return (
-    <div className="rounded-lg shadow-xl mb-8 border border-slate-100 grid grid-cols-1 divide-y divide-slate-100">
-      {children}
-    </div>
-  )
-}
-
+/**
+ * WalletView displays recent transactions and nfts for a given ethereum wallet address
+ * It sends a request to the API to get the wallet data, then constructs
+ * the nft and transaction sections before conditionally displaying them
+ */
 export default function WalletView({ walletAddress }: walletProps) {
   const [wallet, setWallet] = React.useState<Wallet | undefined>()
 
@@ -95,7 +74,6 @@ export default function WalletView({ walletAddress }: walletProps) {
   }
 
   let transactions
-
   if (wallet?.history) {
     transactions = (
       <>
@@ -160,29 +138,53 @@ export default function WalletView({ walletAddress }: walletProps) {
   return (
     <div>
       {wallet ? (
-        <div>
-          <div className={styles.container}>
-            <main className={styles.main}>
-              <div className="font-sans max-w-screen-md mx-auto p-8">
-                <hgroup className="leading-loose border-b pb-4 mb-8 border-slate-200">
-                  <h1 className="text-5xl font-medium text-gray-800">
-                    {hasENS ? wallet.ens[0].name : wallet.address}
-                  </h1>
-                  {hasENS ? (
-                    <h2 className="text-l font-normal text-gray-400">
-                      {wallet.address}
-                    </h2>
-                  ) : null}
-                </hgroup>
-                {nfts}
-                {transactions}
-              </div>
-            </main>
-          </div>
+        <div className={styles.container}>
+          <main className={styles.main}>
+            <div className="font-sans max-w-screen-md mx-auto p-8">
+              <hgroup className="leading-loose border-b pb-4 mb-8 border-slate-200">
+                <h1 className="text-5xl font-medium text-gray-800">
+                  {hasENS ? wallet.ens[0].name : wallet.address}
+                </h1>
+                {hasENS ? (
+                  <h2 className="text-l font-normal text-gray-400">
+                    {wallet.address}
+                  </h2>
+                ) : null}
+              </hgroup>
+              {nfts}
+              {transactions}
+            </div>
+          </main>
         </div>
       ) : (
         <p className={styles.description}>Loading...</p>
       )}
+    </div>
+  )
+}
+
+interface walletProps {
+  walletAddress: string
+}
+
+interface SectionTitleProps {
+  children: React.ReactNode
+}
+
+function SectionTitle(props: SectionTitleProps) {
+  const { children } = props
+  return <h1 className="text-2xl font-normal mb-4 text-gray-600">{children}</h1>
+}
+
+interface SectionProps {
+  children: React.ReactNode
+}
+
+function Section(props: SectionProps) {
+  const { children } = props
+  return (
+    <div className="rounded-lg shadow-xl mb-8 border border-slate-100 grid grid-cols-1 divide-y divide-slate-100">
+      {children}
     </div>
   )
 }
