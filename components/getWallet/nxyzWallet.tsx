@@ -1,28 +1,22 @@
-import React, { useEffect } from "react";
-import { Wallet } from "@neevaco/xyzapi/lib/typescript";
-import styles from "../../styles/Home.module.css";
+import React, { useEffect } from "react"
+
+import { Wallet } from "@neevaco/xyzapi/lib/typescript"
+
+import request from "../../lib/request"
+import styles from "../../styles/Home.module.css"
 
 interface walletProps {
-  walletAddress: string;
-}
-
-interface Props {
-  wallet?: Wallet;
-}
-
-interface ServerSideProps {
-  props: Props;
-  notFound: boolean;
+  walletAddress: string
 }
 
 export default function WalletView({ walletAddress }: walletProps) {
-  const [liveWallet, setLiveWallet] = React.useState<Wallet | undefined>();
+  const [liveWallet, setLiveWallet] = React.useState<Wallet | undefined>()
 
   useEffect(() => {
     request(walletAddress, "Ethereum").then((res) => {
-      setLiveWallet(res.props.wallet);
-    });
-  }, [walletAddress]);
+      setLiveWallet(res.props.wallet)
+    })
+  }, [walletAddress])
 
   return (
     <div>
@@ -38,43 +32,5 @@ export default function WalletView({ walletAddress }: walletProps) {
         {JSON.stringify(liveWallet, null, 2)?.replace(" ", "")}
       </p>
     </div>
-  );
-}
-
-function request(
-  walletAddress: string,
-  blockchain = "ethereum"
-): Promise<ServerSideProps> {
-  return fetch(`/api/wallet/${walletAddress}?blockchain=${blockchain}`)
-    .then((res) => res.json())
-    .then((res: Wallet[]): Promise<ServerSideProps> => {
-      if (res.length === 0) {
-        return Promise.resolve({
-          notFound: true,
-          props: {},
-        });
-      }
-
-      return Promise.resolve({
-        notFound: false,
-        props: {
-          wallet: res[0],
-        },
-      });
-    })
-    .catch((err) => {
-      if (err && err.status === 404) {
-        return {
-          notFound: true,
-          props: {},
-        };
-      }
-
-      console.error("Unable to fetch wallet", err);
-
-      return {
-        notFound: false,
-        props: {},
-      };
-    });
+  )
 }
