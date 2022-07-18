@@ -2,12 +2,7 @@ import type { NextPage } from "next";
 import { DateTime } from "luxon";
 import cx from "classnames";
 import Image from "next/image";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import Login from "../components/login/StytchWalletLogin";
 import styles from "./index.module.css";
-import { useStytchUser } from "@stytch/stytch-react";
-import Link from "next/link";
 
 const wallet = {
   balances: [
@@ -4623,17 +4618,7 @@ const wallet = {
   ],
 };
 
-const Home: NextPage = () => {
-  const sdkUser = useStytchUser();
-
-  const router = useRouter();
-
-  useEffect(() => {
-    if (sdkUser) {
-      router.push("/wallet");
-    }
-  });
-
+const Wallet: NextPage = () => {
   const hasENS =
     Array.isArray(wallet.ens) && wallet.ens[0] && wallet.ens[0].name;
 
@@ -4641,10 +4626,8 @@ const Home: NextPage = () => {
   if (Array.isArray(wallet.recentTokens) && wallet.recentTokens.length) {
     nfts = (
       <>
-        <h1 className="text-2xl font-normal text-gray-600 mt-8 mb-2">
-          Recent Purchases
-        </h1>
-        <div>
+        <SectionTitle>Recent Purchases</SectionTitle>
+        <Section>
           {wallet.recentTokens.map((token) => {
             const nft = token.nft;
             if (!nft) {
@@ -4652,11 +4635,11 @@ const Home: NextPage = () => {
             }
 
             return (
-              <div
-                key={nft.tokenID}
-                className="rounded-lg shadow-xl flex flex-row my-8 p-4 border border-slate-100"
-              >
-                <div className="rounded-lg shrink-0 w-48 mr-4">
+              <div key={nft.tokenID} className="flex flex-row p-4">
+                <div
+                  className="rounded-lg shrink-0 w-48 mr-4 border border-slate-100 whitespace-nowrap"
+                  style={{ fontSize: 0 }}
+                >
                   <Image
                     width="201"
                     height="200"
@@ -4678,7 +4661,7 @@ const Home: NextPage = () => {
               </div>
             );
           })}
-        </div>
+        </Section>
       </>
     );
   }
@@ -4688,10 +4671,8 @@ const Home: NextPage = () => {
   if (wallet.history) {
     transactions = (
       <>
-        <h1 className="text-2xl font-normal text-gray-600 mt-8 mb-2">
-          Recent transactions
-        </h1>
-        <div className="rounded-lg shadow-xl my-8 border border-slate-100 grid grid-cols-1 divide-y divide-slate-100">
+        <SectionTitle>Recent transactions</SectionTitle>
+        <Section>
           {wallet.history.map((history) => {
             const historyTimestamp = DateTime.fromISO(
               history.timestamp
@@ -4743,7 +4724,7 @@ const Home: NextPage = () => {
               </div>
             );
           })}
-        </div>
+        </Section>
       </>
     );
   }
@@ -4761,13 +4742,36 @@ const Home: NextPage = () => {
               </h2>
             ) : null}
           </hgroup>
-          {nfts}
           {transactions}
+          {nfts}
         </div>
-        <Login />
       </main>
     </div>
   );
 };
 
-export default Home;
+interface SectionTitleProps {
+  children: React.ReactNode;
+}
+
+function SectionTitle(props: SectionTitleProps) {
+  return (
+    <h1 className="text-2xl font-normal mb-4 text-gray-600">
+      {props.children}
+    </h1>
+  );
+}
+
+interface SectionProps {
+  children: React.ReactNode;
+}
+
+function Section(props: SectionProps) {
+  return (
+    <div className="rounded-lg shadow-xl mb-8 border border-slate-100 grid grid-cols-1 divide-y divide-slate-100">
+      {props.children}
+    </div>
+  );
+}
+
+export default Wallet;
