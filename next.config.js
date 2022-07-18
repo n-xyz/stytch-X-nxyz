@@ -4,6 +4,6 @@ const nextConfig = {
   images: {
     domains: ["c.neevacdn.net"],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

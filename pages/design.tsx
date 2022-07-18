@@ -1,8 +1,10 @@
-import type { NextPage } from "next";
-import { DateTime } from "luxon";
-import cx from "classnames";
-import Image from "next/image";
-import styles from "./index.module.css";
+import React from "react"
+
+import cx from "classnames"
+import { DateTime } from "luxon"
+import Image from "next/image"
+
+import styles from "./index.module.css"
 
 const wallet = {
   balances: [
@@ -4616,22 +4618,22 @@ const wallet = {
       ],
     },
   ],
-};
+}
 
-const Wallet: NextPage = () => {
+export default function Wallet() {
   const hasENS =
-    Array.isArray(wallet.ens) && wallet.ens[0] && wallet.ens[0].name;
+    Array.isArray(wallet.ens) && wallet.ens[0] && wallet.ens[0].name
 
-  let nfts;
+  let nfts
   if (Array.isArray(wallet.recentTokens) && wallet.recentTokens.length) {
     nfts = (
       <>
         <SectionTitle>Recent Purchases</SectionTitle>
         <Section>
           {wallet.recentTokens.map((token) => {
-            const nft = token.nft;
+            const { nft } = token
             if (!nft) {
-              return null;
+              return null
             }
 
             return (
@@ -4659,14 +4661,14 @@ const Wallet: NextPage = () => {
                   </p>
                 </div>
               </div>
-            );
+            )
           })}
         </Section>
       </>
-    );
+    )
   }
 
-  let transactions;
+  let transactions
 
   if (wallet.history) {
     transactions = (
@@ -4676,7 +4678,7 @@ const Wallet: NextPage = () => {
           {wallet.history.map((history) => {
             const historyTimestamp = DateTime.fromISO(
               history.timestamp
-            ).toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
+            ).toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
             return (
               <div
                 key={`${history.timestamp}~${history.transactionIndex}`}
@@ -4716,17 +4718,17 @@ const Wallet: NextPage = () => {
                                 : line.fromAddress}
                             </div>
                           </div>
-                        );
+                        )
                       })}
                     </div>
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </Section>
       </>
-    );
+    )
   }
   return (
     <div className={styles.container}>
@@ -4747,31 +4749,27 @@ const Wallet: NextPage = () => {
         </div>
       </main>
     </div>
-  );
-};
+  )
+}
 
 interface SectionTitleProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 function SectionTitle(props: SectionTitleProps) {
-  return (
-    <h1 className="text-2xl font-normal mb-4 text-gray-600">
-      {props.children}
-    </h1>
-  );
+  const { children } = props
+  return <h1 className="text-2xl font-normal mb-4 text-gray-600">{children}</h1>
 }
 
 interface SectionProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 function Section(props: SectionProps) {
+  const { children } = props
   return (
     <div className="rounded-lg shadow-xl mb-8 border border-slate-100 grid grid-cols-1 divide-y divide-slate-100">
-      {props.children}
+      {children}
     </div>
-  );
+  )
 }
-
-export default Wallet;
