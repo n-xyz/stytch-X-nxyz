@@ -15,7 +15,7 @@ export default function Home() {
   const [walletAddress, setWalletAddress] = useState("")
 
   useEffect(() => {
-    if (typeof window !== typeof null && !user) {
+    if (typeof window !== "undefined" && !user) {
       router.replace("/")
     }
     if (user?.crypto_wallets) {
