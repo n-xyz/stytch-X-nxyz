@@ -4632,6 +4632,8 @@ const Home: NextPage = () => {
     }
   });
 
+  const hasENS =
+    Array.isArray(wallet.ens) && wallet.ens[0] && wallet.ens[0].name;
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -4646,10 +4648,16 @@ const Home: NextPage = () => {
         <p className={styles.description}>
           Displays your blockchain data within <em>milliseconds</em>.
         </p>
-        <div>
-          <hgroup>
-            <h1>{wallet.ens[0].name}</h1>
-            <h2>{wallet.address}</h2>
+        <div className="font-sans max-w-screen-md mx-auto p-8">
+          <hgroup className="leading-loose">
+            <h1 className="text-5xl font-medium text-gray-800">
+              {hasENS ? wallet.ens[0].name : wallet.address}
+            </h1>
+            {hasENS ? (
+              <h2 className="text-l font-normal text-gray-400">
+                {wallet.address}
+              </h2>
+            ) : null}
           </hgroup>
           <div>
             {wallet.recentTokens.map((token) => {
@@ -4659,14 +4667,28 @@ const Home: NextPage = () => {
               }
 
               return (
-                <div key={nft.tokenID}>
-                  <Image width="201" height="200" src={nft.media.URI} alt="" />
-                  <div>
-                    <h3 className="text-3xl font-bold underline">
+                <div
+                  key={nft.tokenID}
+                  className="rounded-lg shadow-xl flex flex-row my-8 p-4 border border-slate-100"
+                >
+                  <div className="rounded-lg shrink-0 w-48 mr-4">
+                    <Image
+                      width="201"
+                      height="200"
+                      src={nft.media.URI}
+                      alt=""
+                      className="rounded-lg"
+                    />
+                  </div>
+
+                  <div className="shrink-1">
+                    <h3 className="text-2xl font-medium text-gray-800 text-ellipsis overflow-hidden h-8">
                       {nft.title}
                     </h3>
-                    <p>{nft.contractTitle}</p>
-                    <p>{nft.description}</p>
+                    <p className="text-lg text-gray-500">{nft.contractTitle}</p>
+                    <p className="leading-relaxed text-gray-700 mt-4 text-ellipsis overflow-hidden h-20">
+                      {nft.description}
+                    </p>
                   </div>
                 </div>
               );
