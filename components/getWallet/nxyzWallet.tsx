@@ -4,6 +4,7 @@ import { Wallet } from "@neevaco/xyzapi/lib/typescript"
 import cx from "classnames"
 import { DateTime } from "luxon"
 import Image from "next/image"
+import Link from "next/link"
 
 import request from "../../lib/request"
 import styles from "../../styles/Home.module.css"
@@ -153,6 +154,15 @@ export default function WalletView({ walletAddress }: walletProps) {
               </hgroup>
               {nfts}
               {transactions}
+              <div className={styles.neevaxyzOut}>
+                <Link href="https://neeva.xyz/">
+                  <a target="_blank" rel="noopener noreferrer">
+                    <p className={styles.link}>
+                      Click Here and see more on your wallet on Neeva.xyz
+                    </p>
+                  </a>
+                </Link>
+              </div>
             </div>
           </main>
         </div>
