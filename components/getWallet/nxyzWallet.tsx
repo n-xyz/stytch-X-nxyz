@@ -10,7 +10,7 @@ import request from "../../lib/request"
 import styles from "../../styles/Home.module.css"
 
 /**
- * WalletView displays recent transactions and nfts for a given ethereum wallet address
+ * WalletView displays recent transactions and NFTs for a given ethereum wallet address.
  * It sends a request to the API to get the wallet data, then constructs
  * the nft and transaction sections before conditionally displaying them
  */
