@@ -1,7 +1,7 @@
 import { Wallet } from "@neevaco/xyzapi/lib/typescript"
 
 /**
- * request sends a request to the nxyz api wallet endpoint's
+ * sends a request to the nxyz API wallet endpoints
  * API wrapper and handles the API response.
  */
 export default function request(
