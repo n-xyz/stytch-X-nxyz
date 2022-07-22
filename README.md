@@ -7,7 +7,7 @@ This wallet viewer app authenticates a user with [Stytch's web3 login SDK](https
 Some things to notice about the demo:
 
 - ⛓ The data is from the Ethereum blockchain
-- ⚡️ It takes a few hundred milliseconds to retrieve all of the wallet data
+- ⚡️ The API is blazing fast: it only takes a few hundred milliseconds to retrieve wallet data
 - 📦 The API provides more data that the demo is displaying
 
 nxyz helps developers ship faster for the first billion web3 users. Our multi-chain API turns reading blockchains into real-time performant data streams for any engineer. Retrieve detailed data across wallets, transactions, NFTs, and smart contracts with both on and off-chain information.
