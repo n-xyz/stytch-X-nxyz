@@ -12,9 +12,9 @@ import styles from "../../styles/Home.module.css"
 /**
  * WalletView displays recent transactions and NFTs for a given ethereum wallet address.
  * It sends a request to the API to get the wallet data, then constructs
- * the nft and transaction sections before conditionally displaying them
+ * the NFT and transaction sections before conditionally displaying them
  */
-export default function WalletView({ walletAddress }: walletProps) {
+export default function WalletView({ walletAddress }: WalletProps) {
   const [wallet, setWallet] = React.useState<Wallet | undefined>()
 
   useEffect(() => {
@@ -86,7 +86,7 @@ export default function WalletView({ walletAddress }: walletProps) {
             ).toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
             return (
               <div
-                key={`${history.timestamp}~${history.transactionIndex}`}
+                key={`${history.timestamp}~${history.transactionIndex}~${history.logLine[0].logIndex}`}
                 className="p-4"
               >
                 <div className="shrink-1">
@@ -158,7 +158,7 @@ export default function WalletView({ walletAddress }: walletProps) {
                 <Link href="https://neeva.xyz/">
                   <a target="_blank" rel="noopener noreferrer">
                     <p className={styles.link}>
-                      Click Here and see more on your wallet on Neeva.xyz
+                      Click here and see more on your wallet on Neeva.xyz
                     </p>
                   </a>
                 </Link>
@@ -173,7 +173,7 @@ export default function WalletView({ walletAddress }: walletProps) {
   )
 }
 
-interface walletProps {
+interface WalletProps {
   walletAddress: string
 }
 
