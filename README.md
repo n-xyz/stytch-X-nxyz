@@ -1,4 +1,4 @@
-# STYTCH X nxyz
+# STYTCH × nxyz
 
 This is a collaboration to show an example of what [Stytch's](https://stytch.com/) Web3 auth and [nxyz's](https://n.xyz/) blockchain data API can do.
 
