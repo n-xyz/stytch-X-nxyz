@@ -35,16 +35,10 @@ NEXT_PUBLIC_STYTCH_PUBLIC_TOKEN="public-token-test-3333333-3333-3333-3333-333333
 
 ### Get nxyz api key
 
-Click this link and copy the demo key into your `.env.template` file for the nxyz key and
-use the proper host for the api calls you make per the [docs](https://docs.n.xyz/).
-
-[Click here for Demo nxyz API key](https://share.1password.com/s#PE8aY4siBHZo5-fOyCk8obxbewXx5DwuxI2vsAw18Xg)
-
-Example:
+Copy the demo key into your `.env.template` file for the nxyz key. Example:
 
 ```
-NXYZ_API_KEY="nsihcusd79s8hcd8hidjc"
-NXYZ_API_HOST="https://api.n.xyz"
+NXYZ_API_KEY="nhxBst3rzxfu65N3ZvCJssfR"
 ```
 
 Once you've gathered these values, add them to a new .env.local file. Example:
