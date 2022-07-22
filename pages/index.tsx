@@ -2,10 +2,10 @@ import React, { useEffect } from "react"
 
 import { useStytchUser } from "@stytch/stytch-react"
 import Head from "next/head"
-import Link from "next/link"
 import { useRouter } from "next/router"
 
-import Login from "../components/login/StytchWalletLogin"
+import Header from "../components/header"
+import Login from "../components/login"
 import styles from "../styles/Home.module.css"
 
 export default function Home() {
@@ -25,15 +25,7 @@ export default function Home() {
         <title>Stytch X nxyz</title>
       </Head>
       <main className={styles.main}>
-        <header className={styles.header}>
-          <div className={styles.githubLink}>
-            <Link href="https://github.com/neevaco/stytch-X-nxyz">
-              <a target="_blank" rel="noopener noreferrer">
-                Github
-              </a>
-            </Link>
-          </div>
-        </header>
+        <Header signOut={false} />
         <h1 className={styles.title}>Wallet Viewer</h1>
         <p className={styles.description}>
           Displays your blockchain data within <em>milliseconds</em>.

@@ -12,7 +12,9 @@ const sdkStyle: StyleConfig = {
   primaryTextColor: "#090909",
   hideHeaderText: true,
 }
-
+/**
+ * Login returns a prefigured Stytch SDK web3 login widget
+ */
 export default function Login() {
   return <Stytch loginOrSignupView={loginOrSignupViewConfig} style={sdkStyle} />
 }

@@ -1,14 +1,9 @@
 import { Wallet } from "@neevaco/xyzapi/lib/typescript"
 
-interface Props {
-  wallet?: Wallet
-}
-
-interface ServerSideProps {
-  props: Props
-  notFound: boolean
-}
-
+/**
+ * sends a request to the nxyz API wallet endpoints
+ * API wrapper and handles the API response.
+ */
 export default function request(
   walletAddress: string,
   blockchain = "ethereum"
@@ -45,4 +40,13 @@ export default function request(
         props: {},
       }
     })
+}
+
+interface Props {
+  wallet?: Wallet
+}
+
+interface ServerSideProps {
+  props: Props
+  notFound: boolean
 }
