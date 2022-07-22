@@ -56,7 +56,7 @@ cp .env.template .env.local
 
 ## How to run your own copy on Vercel
 
-use this link + a stytch public api token + a nxyz api key
+Use this link + a Stytch public API token + a nxyz API key
 to fork the GitHub repo and have a Vercel site made for it.
 
 once the site is deployed you will want to [add the api keys to vercel using their website GUI](https://vercel.com/docs/concepts/projects/environment-variables#development-environment-variables).
