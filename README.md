@@ -1,6 +1,6 @@
 # STYTCH × nxyz
 
-This is a collaboration to show an example of what [Stytch's](https://stytch.com/) Web3 auth and [nxyz's](https://n.xyz/) blockchain data API can do.
+This collaboration demonstrates the combined ease and power of [Stytch's](https://stytch.com/) Web3 auth platform and [nxyz's](https://n.xyz/) blockchain data API.
 
 This wallet viewer app authenticates a user with [Stytch's web3 login SDK](https://stytch.com/docs/sdks/javascript-sdk#crypto-wallets_ui-components) and displays the user's Ethereum wallet. It leverages nxyz's wallet API to show the users' most recent NFTs and transactions.
 
