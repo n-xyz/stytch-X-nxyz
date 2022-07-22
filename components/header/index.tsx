@@ -21,7 +21,7 @@ export default function Header({ signOut }: HeaderProps) {
       <div className={styles.githubLink}>
         <Link href="https://github.com/neevaco/stytch-X-nxyz">
           <a target="_blank" rel="noopener noreferrer">
-            Github
+            GitHub
           </a>
         </Link>
       </div>
