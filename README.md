@@ -13,7 +13,7 @@ Some things to notice about the demo:
 nxyz helps developers ship faster for the first billion web3 users. Our multi-chain API turns reading blockchains into real-time performant data streams for any engineer. Retrieve detailed data across wallets, transactions, NFTs, and smart contracts with both on and off-chain information.
 You can learn more about nxyz at our website [n.xyz](https://n.xyz/) or in our [API documentation](https://docs.n.xyz/).
 
-This demo was made in next.js with Vercel so you can try out the Demo here:
+This demo was made in Next.js with Vercel. You can try out the demo at [https://stytch-x-nxyz.vercel.app/](stytch-x-nxyz.vercel.app).
 https://stytch-x-nxyz.vercel.app/
 
 ## Prerequisites
