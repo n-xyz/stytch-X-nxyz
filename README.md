@@ -20,7 +20,7 @@ This demo was made in Next.js with Vercel. You can try out the demo at [https://
 
 To run this demo locally you need:
 
-- a stytch public API token
+- a Stytch public API token
 - a nxyz API key
 
 ### Setup Stytch
@@ -53,7 +53,7 @@ cp .env.template .env.local
 Use this link + a Stytch public API token + a nxyz API key
 to fork the GitHub repo and have a Vercel site made for it.
 
-once the site is deployed you will want to [add the api keys to vercel using their website GUI](https://vercel.com/docs/concepts/projects/environment-variables#development-environment-variables).
+Once the site is deployed you will want to [add the api keys to vercel using their website GUI](https://vercel.com/docs/concepts/projects/environment-variables#development-environment-variables).
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fneevaco%2Fstytch-X-nxyz)
 
