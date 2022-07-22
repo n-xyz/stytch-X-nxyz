@@ -51,7 +51,7 @@ Once you've gathered these values, add them to a new .env.local file. Example:
 
 ```bash
 cp .env.template .env.local
-# Replace your keys in new .env.local file`
+# Replace your keys in the new .env.local file`
 ```
 
 ## How to run your own copy on Vercel
