@@ -18,7 +18,7 @@ https://stytch-x-nxyz.vercel.app/
 
 ## Prerequisites
 
-To run this demo locally you need 2 things:
+To run this demo locally you need:
 
 - a stytch public API token
 - a nxyz API key
