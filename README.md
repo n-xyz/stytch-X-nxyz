@@ -22,19 +22,9 @@ To run this demo locally you need:
 - a Stytch public API token
 - a nxyz API key
 
-### Setup Stytch
+### Get nxyz API key
 
-After signing up for Stytch, you'll need a `public_token`. You can find these in the [API keys tab](https://stytch.com/dashboard/api-keys).
-
-Put this value in the `.env.template` file for the Stytch key. Example:
-
-```
-NEXT_PUBLIC_STYTCH_PUBLIC_TOKEN="public-token-test-3333333-3333-3333-3333-3333333333"
-```
-
-### Get nxyz api key
-
-Copy the demo key into your `.env.template` file for the nxyz key. Example:
+Copy your NXYZ demo key in to your `.env.local` file. For example:
 
 ```
 NXYZ_API_KEY="nhxBst3rzxfu65N3ZvCJssfR"
@@ -45,6 +35,19 @@ Once you've gathered these values, add them to a new .env.local file. Example:
 ```bash
 cp .env.template .env.local
 # Replace your keys in the new .env.local file`
+```
+
+### Setup Stytch
+
+After signing up for Stytch, you'll need a `public_token`. You can find these in the [API keys tab](https://stytch.com/dashboard/api-keys).
+
+You'll also need to whitelist your dev server against the Stytch SDK. In this case whitelist "http://localhost:3000" on the [SDK
+configuration tab](https://stytch.com/dashboard/sdk-configuration). Ensure that at a minimum wallet-based authentication is also enabled.
+
+Put the `public_token` value in the `.env.local` file for the Stytch key. Example:
+
+```
+NEXT_PUBLIC_STYTCH_PUBLIC_TOKEN="public-token-test-3333333-3333-3333-3333-3333333333"
 ```
 
 ## How to run your own copy on Vercel
@@ -61,9 +64,9 @@ Once the site is deployed you will want to [add the API keys to Vercel using the
 First, run the development server:
 
 ```bash
-npm run dev
+npm i; npm run dev
 # or
-yarn dev
+yarn; yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
