@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 
-import { Wallet } from "@neevaco/xyzapi/lib/typescript"
+import { Wallet } from "@nxyzinc/xyzapi"
 import cx from "classnames"
 import { DateTime } from "luxon"
 import Image from "next/image"
