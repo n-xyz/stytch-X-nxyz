@@ -1,4 +1,4 @@
-import { ENS } from "@neevaco/xyzapi/lib/typescript"
+import { ENS } from "@neevaco/xyzapi"
 
 export default function getEnsName(ens: ENS[], address: string): string {
   let name = address.toLowerCase()

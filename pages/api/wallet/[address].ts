@@ -1,4 +1,4 @@
-import { Wallet, DefaultApiFactory } from "@neevaco/xyzapi/lib/typescript"
+import { Wallet, DefaultApiFactory } from "@neevaco/xyzapi"
 import type { NextApiRequest, NextApiResponse } from "next"
 
 const basePath = process.env.NXYZ_API_HOST
