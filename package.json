@@ -9,7 +9,7 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
-    "@neevaco/xyzapi": "neevaco/xyz",
+    "@neevaco/xyzapi": "0.9.1",
     "@stytch/stytch-react": "^4.1.1",
     "@types/luxon": "^2.3.2",
     "autoprefixer": "^10.4.7",
