@@ -1,11 +1,12 @@
 import React, { useEffect } from "react"
 
-import { Wallet } from "@neevaco/xyzapi/lib/typescript"
+import { Wallet } from "@nxyzinc/xyzapi"
 import cx from "classnames"
 import { DateTime } from "luxon"
 import Image from "next/image"
 import Link from "next/link"
 
+import getEnsName from "../../lib/getENSname"
 import request from "../../lib/request"
 import styles from "../../styles/Home.module.css"
 
@@ -144,7 +145,7 @@ export default function WalletView({ walletAddress }: WalletProps) {
             <div className="font-sans max-w-screen-md mx-auto p-8">
               <hgroup className="leading-loose border-b pb-4 mb-8 border-slate-200">
                 <h1 className="text-5xl font-medium text-gray-800">
-                  {hasENS ? wallet.ens[0].name : wallet.address}
+                  {getEnsName(wallet.ens, wallet.address)}
                 </h1>
                 {hasENS ? (
                   <h2 className="text-l font-normal text-gray-400">

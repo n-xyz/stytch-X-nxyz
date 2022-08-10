@@ -1,4 +1,4 @@
-import { Wallet } from "@neevaco/xyzapi/lib/typescript"
+import { Wallet } from "@nxyzinc/xyzapi"
 
 /**
  * sends a request to the nxyz API wallet endpoints
