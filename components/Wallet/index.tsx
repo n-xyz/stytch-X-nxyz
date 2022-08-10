@@ -156,7 +156,7 @@ export default function WalletView({ walletAddress }: WalletProps) {
               {nfts}
               {transactions}
               <div className={styles.neevaxyzOut}>
-                <Link href={`https://neeva.xyz/${wallet.address}/next-index?`}>
+                <Link href={`https://neeva.xyz/${wallet.address}`}>
                   <a target="_blank" rel="noopener noreferrer">
                     <p className={styles.link}>
                       Click here and see more on your wallet on Neeva.xyz
