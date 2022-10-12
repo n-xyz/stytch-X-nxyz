@@ -13,7 +13,7 @@ Some things to notice about the demo:
 nxyz helps developers ship faster for the first billion web3 users. Our multi-chain API makes reading blockchains for real-time, high-performance applications a snap for any engineer; no blockchain expertise is required. Retrieve detailed data across wallets, transactions, NFTs, and smart contracts with both on and off-chain information.
 You can learn more about nxyz at our website [n.xyz](https://n.xyz/) or in our [API documentation](https://docs.n.xyz/).
 
-This demo was made in Next.js with Vercel. You can try out the demo at [https://stytch-x-nxyz.vercel.app/](stytch-x-nxyz.vercel.app).
+This demo was made in Next.js with Vercel. You can try out the demo at [stytch.n.xyz](https://stytch.n.xyz/).
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ To run this demo locally you need:
 Copy your NXYZ demo key in to your `.env.local` file. For example:
 
 ```
-NXYZ_API_KEY="nhxBst3rzxfu65N3ZvCJssfR"
+NXYZ_API_KEY="demo"
 ```
 
 Once you've gathered these values, add them to a new .env.local file. Example:
