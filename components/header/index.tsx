@@ -33,8 +33,12 @@ export default function Header({ signOut }: HeaderProps) {
         </Link>
         <Image src={plusIcon} height={100} width={50} alt="" />
         <Link href="https://n.xyz/">
-          <a target="_blank" rel="noopener noreferrer">
-            <Image src={nxyzLogo} height={100} width={130} alt="nxyz" />
+          <a
+            className={styles.nxyzLogo}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src={nxyzLogo} height={100} width={120} alt="nxyz" />
           </a>
         </Link>
       </div>

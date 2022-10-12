@@ -22,6 +22,10 @@
   margin-bottom: 2rem;
 }
 
+.nxyzLogo {
+  margin-left: 8px;
+}
+
 .main {
   min-height: 100vh;
   flex: 1;
